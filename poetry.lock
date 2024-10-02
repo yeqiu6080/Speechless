@@ -1265,5 +1265,5 @@ reference = "ali"
 
 [metadata]
 lock-version = "2.0"
-python-versions = "^3.11"
+python-versions = "^3.10"
 content-hash = "544cd060c9ca2ca403bd9ccd8e37a19c5ea85702e902a3dce09eced6f373eb54"
