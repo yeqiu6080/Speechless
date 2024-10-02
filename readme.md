@@ -10,7 +10,7 @@
 
 #### 准备
 
-自行安装python3.11+，git，在powershell或git bash中执行以下操作（均在泥需要安装Speechless的目录下执行）
+自行安装python3.11+，git，在cmd中执行以下操作（# 后为注释无需执行）
 
 #### 克隆
 
@@ -20,6 +20,7 @@ git clone https://github.com/yeqiu6080/Speechless.git
 # 或通过github镜像安装
 git clone https://ghproxy.net/https://github.com/yeqiu6080/Speechless.git
 ```
+### 以下操作均在克隆的speechless目录下执行
 
 #### 换源&创建虚拟环境&安装依赖
 
@@ -34,16 +35,17 @@ python -m venv .venv --prompt Speechless
 # 安装pipx
 python -m pip install --user pipx
 python -m pipx ensurepath
+
 ```
 
-关闭当前窗口，然后重新打开一个powershell或者git bash
-
+关闭当前窗口，然后重新打开一个cmd
 ```
 # 安装poetry，nb脚手架
 pipx install nb-cli
 pipx install poetry
 # 安装依赖
 poetry install
+
 ```
 
 ## 2.使用
@@ -51,6 +53,7 @@ poetry install
 ```
 # 运行
 nb run
+
 ```
 
 ### 连接协议端
