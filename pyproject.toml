@@ -1,12 +1,12 @@
 [tool.poetry]
-name = "wuyu-bot"
+name = "Speechless"
 version = "0.1.0"
 description = "一个普通的nonebot实现"
 authors = ["yeqiu6080@outlook.com"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = "^3.10"
 nonebot2 = {extras = ["fastapi"], version = "^2.3.3"}
 nonebot-adapter-onebot = "^2.4.5"
 nonebot-plugin-crazy-thursday = "^0.2.8"

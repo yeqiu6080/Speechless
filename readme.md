@@ -4,7 +4,7 @@
 
 <u>**注意：只支持Windows环境，不兼容Windows8.1及以下**</u>
 
-![python](https://img.shields.io/badge/python-v3.11%2B-blue)![nonebot](https://img.shields.io/badge/nonebot-v2.3.3-yellow)![onebot](https://img.shields.io/badge/onebot-v11-black)
+![python](https://img.shields.io/badge/python-v3.10%2B-blue)![nonebot](https://img.shields.io/badge/nonebot-v2.3.3-yellow)![onebot](https://img.shields.io/badge/onebot-v11-black)
 
 ## 1.安装
 
