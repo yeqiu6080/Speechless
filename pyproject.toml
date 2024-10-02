@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "Speechless"
+name = "wuyu-bot"
 version = "0.1.0"
 description = "一个普通的nonebot实现"
 authors = ["yeqiu6080@outlook.com"]
