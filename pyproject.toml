@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "wuyu-bot"
+version = "0.1.0"
+description = "一个普通的nonebot实现"
+authors = ["yeqiu6080@outlook.com"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+nonebot2 = {extras = ["fastapi"], version = "^2.3.3"}
+nonebot-adapter-onebot = "^2.4.5"
+nonebot-plugin-crazy-thursday = "^0.2.8"
+
+
+[[tool.poetry.source]]
+name = "ali"
+url = "http://mirrors.aliyun.com/pypi/simple/"
+priority = "primary"
+
+
+[tool.nonebot]
+adapters = [{name = "OneBot V11", module_name = "nonebot.adapters.onebot.v11"}]
+plugins = ["nonebot_plugin_crazy_thursday"]
+plugin_dirs = ["plugins"]
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
