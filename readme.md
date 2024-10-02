@@ -65,7 +65,7 @@ nb run
 
 反向 WebSocket 连接
 
-> 配置 OneBot 实现的 ws reverse 相关配置，使用 universal-client 并将上报地址改为以下地址其一： 
+> 配置 OneBot 实现的 ws reverse 相关配置，并将上报地址改为以下地址其一： 
 >
 > ws://127.0.0.1:1451/onebot/v11/ 
 >
