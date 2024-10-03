@@ -22,6 +22,17 @@ def load_config(cfilename: str):
     # 读取主人
     if "superusers" in config:
         nb_config.superusers = set(config["superusers"])
+    else:
+        logger.error("配置文件中未找到 superusers")
+
+    # 读取命令前缀
+    if "command_start" in config:
+        nb_config.command_start = set(config["command_start"])
+
+    # 读取命令分隔符
+    if "command_sep" in config:
+        nb_config.command_sep = set(config["command_sep"])
+
 
 
     
