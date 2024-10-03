@@ -5,9 +5,27 @@ from nonebot import logger
 
 import os
 import shutil
+import json
+
+
+
 
 def load_config(cfilename: str):
-    pass
+    nb_config = nonebot.get_driver().config
+    try:
+        with open(cfilename, "r", encoding="utf-8") as f:
+            config = json.load(f)
+    except Exception as e:
+        logger.error(f"读取配置文件失败：{e}")
+        return False
+
+    # 读取主人
+    if "superusers" in config:
+        nb_config.superusers = set(config["superusers"])
+
+
+    
+
 
 
 nonebot.init()
