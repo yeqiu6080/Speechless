@@ -43,6 +43,8 @@ python -m pipx ensurepath
 # 安装poetry，nb脚手架
 pipx install nb-cli
 pipx install poetry
+# 激活虚拟环境
+.venv\Scripts\activate
 # 安装依赖
 poetry install
 
@@ -60,11 +62,13 @@ nb run
 
 本项目符合 [OneBot11](https://github.com/howmanybots/onebot) 标准，可基于以下项目与机器人框架/平台进行交互
 
-|                           项目地址                           | 平台 |         核心作者         | 备注 |
-| :----------------------------------------------------------: | :--: | :----------------------: | :--: |
-|       [LLOneBot](https://github.com/LLOneBot/LLOneBot)       | NTQQ |        linyuchen         | 可用 |
-|        [Napcat](https://github.com/NapNeko/NapCatQQ)         | NTQQ |         NapNeko          | 可用 |
-| [Lagrange.Core](https://github.com/LagrangeDev/Lagrange.Core) |      | LagrangeDev/Linwenxuan04 | 可用 |
+|                           项目地址                           |  平台  |         核心作者         | 状态 |
+| :----------------------------------------------------------: | :----: | :----------------------: | ---- |
+|    [👍推荐LLOneBot](https://github.com/LLOneBot/LLOneBot)     |  NTQQ  |        linyuchen         | 维护 |
+|    [Shamrock](https://whitechi73.github.io/OpenShamrock)     | Xposed |        whitechi73        | 归档 |
+|        [Napcat](https://github.com/NapNeko/NapCatQQ)         |  NTQQ  |         NapNeko          | 维护 |
+| [Lagrange.Core](https://github.com/LagrangeDev/Lagrange.Core) |        | LagrangeDev/Linwenxuan04 | 维护 |
+|      [Yunzai](https://gitee.com/xiaoye12123/ws-plugin)       |        |                          | 维护 |
 
 反向 WebSocket 连接
 
