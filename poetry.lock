@@ -833,6 +833,27 @@ url = "http://mirrors.aliyun.com/pypi/simple"
 reference = "ali"
 
 [[package]]
+name = "nonebot-plugin-word-bank2"
+version = "0.1.8"
+description = "无数据问答插件"
+optional = false
+python-versions = ">=3.8,<4.0"
+files = [
+    {file = "nonebot_plugin_word_bank2-0.1.8-py3-none-any.whl", hash = "sha256:d16c1a61315ce68a97ff355acbd245347c482ce32284d5a9a6c82e47b0c30ff2"},
+    {file = "nonebot_plugin_word_bank2-0.1.8.tar.gz", hash = "sha256:95d6c8c7312f557c79cb06482ca451f126b45cd7b66d7497ece047d6e42cf2b0"},
+]
+
+[package.dependencies]
+httpx = ">=0.18.0,<1.0.0"
+nonebot-adapter-onebot = ">=2.0.0-beta.1"
+nonebot2 = ">=2.0.0"
+
+[package.source]
+type = "legacy"
+url = "http://mirrors.aliyun.com/pypi/simple"
+reference = "ali"
+
+[[package]]
 name = "nonebot2"
 version = "2.3.3"
 description = "An asynchronous python bot framework."
@@ -1287,13 +1308,13 @@ reference = "ali"
 
 [[package]]
 name = "tomli"
-version = "2.0.1"
+version = "2.0.2"
 description = "A lil' TOML parser"
 optional = false
-python-versions = ">=3.7"
+python-versions = ">=3.8"
 files = [
-    {file = "tomli-2.0.1-py3-none-any.whl", hash = "sha256:939de3e7a6161af0c887ef91b7d41a53e7c5a1ca976325f429cb46ea9bc30ecc"},
-    {file = "tomli-2.0.1.tar.gz", hash = "sha256:de526c12914f0c550d15924c62d72abc48d6fe7364aa87328337a31007fe8a4f"},
+    {file = "tomli-2.0.2-py3-none-any.whl", hash = "sha256:2ebe24485c53d303f690b0ec092806a085f07af5a5aa1464f3931eec36caaa38"},
+    {file = "tomli-2.0.2.tar.gz", hash = "sha256:d46d457a85337051c36524bc5349dd91b1877838e2979ac5ced3e710ed8a60ed"},
 ]
 
 [package.source]
@@ -1753,4 +1774,4 @@ reference = "ali"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "6a119b63ff0bb9b8da3c0fb71c894e03e848214907248a22792b8f1c6ef68c85"
+content-hash = "f1302ce08331e58700789b9ec81eb310d5eb66b46129860dd9bb06bb09c2abe5"

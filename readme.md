@@ -83,5 +83,15 @@ nb run
 ## 恭喜🎉🎉
 
 到这里，你已经完成安装了
+## 更新
+```
+# 放弃更改（注意备份）
+git checkout .
+# 更新
+git pull
+# 激活虚拟环境
+.venv\Scripts\activate
+# 安装依赖
+poetry install
 
-你可以通过nb-cli 安装商店插件
+```

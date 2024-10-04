@@ -1,9 +1,10 @@
 [tool.poetry]
-name = "Speechles"
+name = "wuyu-bot"
 version = "0.1.1"
 description = "一个普通的nonebot实现"
-authors = "yeqiu6080@outlook.com"
+authors = ["yeqiu6080 <yeqiu6080@outlook.com>"]
 readme = "README.md"
+package-mode = false
 
 [tool.poetry.dependencies]
 python = "^3.10"
@@ -13,6 +14,7 @@ nonebot-plugin-crazy-thursday = "^0.2.8"
 nonebot-plugin-alconna = "^0.52.3"
 nonebot-plugin-session = "^0.3.2"
 nonebot-plugin-status = "^0.9.0"
+nonebot-plugin-word-bank2 = "^0.1.8"
 
 
 [[tool.poetry.source]]
@@ -23,8 +25,11 @@ priority = "primary"
 
 [tool.nonebot]
 adapters = [{name = "OneBot V11", module_name = "nonebot.adapters.onebot.v11"}]
-plugins = ["nonebot_plugin_crazy_thursday", "nonebot_plugin_status"]
+plugins = ["nonebot_plugin_crazy_thursday", "nonebot_plugin_status", "nonebot_plugin_word_bank2"]
 plugin_dirs = ["plugins"]
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+
+
