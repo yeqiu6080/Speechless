@@ -7,3 +7,4 @@ data/
 #cache
 plugins/chehui/__pycache__/
 plugins/chehui/adapters/__pycache__
+plugins/__pycache__/

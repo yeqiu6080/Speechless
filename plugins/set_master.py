@@ -2,6 +2,7 @@ from nonebot import on_command,logger,get_driver
 from nonebot.permission import SUPERUSER
 from nonebot.params import ArgPlainText,CommandArg
 from nonebot.adapters.onebot.v11 import Message,event
+from nonebot.adapters import Event
 
 
 import os,shutil,json,random,hashlib
@@ -73,7 +74,7 @@ async def _(id: str = ArgPlainText()):
         await add.finish(f"已添加主人{id}")
 
 
-async def is_not_master(event: event):
+async def is_not_master(event: Event):
     if event.get_user_id() not in get_driver().config.superusers:
         return True
     else:
@@ -84,14 +85,15 @@ set_master = on_command("设置主人", priority=1, permission=is_not_master,blo
 async def _():
     global code
     code = out_code()
-    logger.warning(f"验证码：{code}")
+    logger.opt(colors=True).warning(f"验证码：<blue>{code}</blue>")
 
 
-@set_master.got("in", prompt="请输入验证码")
-async def _(in_: str = ArgPlainText(), id: str = event.get_user_id()):
+@set_master.got("ans", prompt="请输入验证码")
+async def _(event: Event, ans: str = ArgPlainText() ):
+    id = event.get_user_id()
 
     global code
-    if in_ == code:
+    if ans == code:
         await set_master.send("验证成功")
         try:
             add_master(id)
@@ -99,4 +101,8 @@ async def _(in_: str = ArgPlainText(), id: str = event.get_user_id()):
             await set_master.finish(f"设置主人时失败：{e}")
         else:
             await set_master.finish(f"已添加主人{id}")
-    
+
+is_master = on_command("设置主人", priority=1, permission=SUPERUSER,block=False)
+@is_master.handle()
+async def _():
+    await is_master.finish("你已经是主人了，无需设置")
