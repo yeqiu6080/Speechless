@@ -139,6 +139,25 @@ url = "http://mirrors.aliyun.com/pypi/simple"
 reference = "ali"
 
 [[package]]
+name = "emoji"
+version = "2.14.0"
+description = "Emoji for Python"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "emoji-2.14.0-py3-none-any.whl", hash = "sha256:fcc936bf374b1aec67dda5303ae99710ba88cc9cdce2d1a71c5f2204e6d78799"},
+    {file = "emoji-2.14.0.tar.gz", hash = "sha256:f68ac28915a2221667cddb3e6c589303c3c6954c6c5af6fefaec7f9bdf72fdca"},
+]
+
+[package.extras]
+dev = ["coverage", "pytest (>=7.4.4)"]
+
+[package.source]
+type = "legacy"
+url = "http://mirrors.aliyun.com/pypi/simple"
+reference = "ali"
+
+[[package]]
 name = "exceptiongroup"
 version = "1.2.2"
 description = "Backport of PEP 654 (exception groups)"
@@ -759,6 +778,28 @@ files = [
 httpx = ">=0.23.0,<0.24.0"
 nonebot-adapter-onebot = ">=2.2.0,<3.0.0"
 nonebot2 = ">=2.0.0,<3.0.0"
+
+[package.source]
+type = "legacy"
+url = "http://mirrors.aliyun.com/pypi/simple"
+reference = "ali"
+
+[[package]]
+name = "nonebot-plugin-emojimix"
+version = "0.4.0"
+description = "Nonebot2 plugin for emojimix"
+optional = false
+python-versions = ">=3.8,<4.0"
+files = [
+    {file = "nonebot_plugin_emojimix-0.4.0-py3-none-any.whl", hash = "sha256:b49a779d0c9e411d2a0c2737311d75c7a3456bdee102b3c9865e07676c40f02d"},
+    {file = "nonebot_plugin_emojimix-0.4.0.tar.gz", hash = "sha256:a4aa00a3dbc320d4792b6f63d5cd5dce18f1fe604f37e9fc54905fe3c6e2eba5"},
+]
+
+[package.dependencies]
+emoji = ">=2.0.0,<3.0.0"
+httpx = ">=0.20.0,<1.0.0"
+nonebot-plugin-alconna = ">=0.38.0,<1.0.0"
+nonebot2 = ">=2.2.0,<3.0.0"
 
 [package.source]
 type = "legacy"
@@ -1774,4 +1815,4 @@ reference = "ali"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "f1302ce08331e58700789b9ec81eb310d5eb66b46129860dd9bb06bb09c2abe5"
+content-hash = "99d04b233135cd2a8ba365ec8d441ac8b536b6e8ce1e225791c37815a1965be5"
