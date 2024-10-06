@@ -16,6 +16,8 @@ nonebot-plugin-session = "^0.3.2"
 nonebot-plugin-status = "^0.9.0"
 nonebot-plugin-word-bank2 = "^0.1.8"
 nonebot-plugin-emojimix = "^0.4.0"
+nonebot-plugin-workscore = "^0.1.2"
+nonebot-plugin-color = "^0.4.2"
 
 
 [[tool.poetry.source]]
@@ -26,7 +28,7 @@ priority = "primary"
 
 [tool.nonebot]
 adapters = [{name = "OneBot V11", module_name = "nonebot.adapters.onebot.v11"}]
-plugins = ["nonebot_plugin_crazy_thursday", "nonebot_plugin_status", "nonebot_plugin_word_bank2", "nonebot_plugin_emojimix"]
+plugins = ["nonebot_plugin_crazy_thursday", "nonebot_plugin_status", "nonebot_plugin_word_bank2", "nonebot_plugin_emojimix", "nonebot_plugin_workscore", "nonebot_plugin_color"]
 plugin_dirs = ["plugins"]
 [build-system]
 requires = ["poetry-core"]
