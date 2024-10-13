@@ -89,8 +89,12 @@ if os.path.exists("data/word_bank/bank.json"):
     nb_config = nonebot.get_driver().config
     for key in bank:
         try:
+            listt = []
             for i in bank[key]:
                 i = re.sub(r'summary=&#91;图片&#93;', f'summary={nb_config.word_image_name}', i)
+                listt.append(i)
+            bank[key] = listt
+
         except Exception as e:
             logger.debug(f"修改词库图片外显失败：{e}")
     with open("data/word_bank/bank.json", "w", encoding="utf-8") as f:
