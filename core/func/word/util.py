@@ -57,18 +57,37 @@ async def save_and_convert_img(msg: Message, img_dir: Path):
       * `msg: Message`: 待处理的消息
       * `img_dir: Path`: 图片保存路径
     """
-    p_list = helpers.extract_image_urls(msg)
+    """p_list = helpers.extract_image_urls(msg)
     logger.info(f"开始下载图片：{p_list}")
     for url in p_list:
        # 检查图片文件夹中有无同名文件
         images = [f.name for f in img_dir.iterdir() if f.is_file()]
-        md5_val = hashlib.md5(url.encode('utf8')).hexdigest()
+        md5_val = hashlib.md5(url.encode('utf8')).hexdigest() + url[-5:]
         filepath = img_dir / md5_val
         if url not in images:
             data = await get_img(url)
             if not data:
                 continue
-            await save_img(data, filepath)
+            await save_img(data, filepath)"""
+    for msg_seg in msg:
+        if msg_seg.type == "image":
+            filename = msg_seg.data.get("filename", "")
+            if not filename:
+                continue
+            # 检查图片文件夹中有无同名文件
+            images = [f.name for f in img_dir.iterdir() if f.is_file()]
+            filepath = img_dir / filename
+            if filename not in images:
+                url = msg_seg.data.get("url", "")
+                logger.info(f"开始下载图片：{filename},{url}")
+                if not url:
+                    continue
+                data = await get_img(url)
+                if not data:
+                    continue
+                await save_img(data, filepath)
+            msg_seg.data["file"] = f"file:///{filepath.resolve()}"
+
 
 
 
