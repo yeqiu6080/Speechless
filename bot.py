@@ -6,6 +6,7 @@ from nonebot import logger
 import os
 import shutil
 import json
+import re
 
 
 
@@ -32,6 +33,13 @@ def load_config(cfilename: str):
     # 读取命令分隔符
     if "command_sep" in config:
         nb_config.command_sep = set(config["command_sep"])
+    
+    # 读取自定义外显
+    if "word_image_name" in config:
+        nb_config.word_image_name = config["word_image_name"]
+    else:
+        nb_config.word_image_name = "Jerry来了！"
+
 
 
 
@@ -45,7 +53,11 @@ driver = nonebot.get_driver()
 driver.register_adapter(ONEBOT_V11Adapter)
 
 
-nonebot.load_from_toml("pyproject.toml")
+
+
+
+
+
 
 # 加载配置
 if os.path.exists("data/config/"):
@@ -70,6 +82,24 @@ else:
         logger.error("配置文件不存在，请重新拉取bot")
 
 
+# 词库图片外显
+if os.path.exists("data/word_bank/bank.json"):
+    with open("data/word_bank/bank.json", "r", encoding="utf-8") as f:
+        bank = json.load(f)
+    nb_config = nonebot.get_driver().config
+    for key in bank:
+        try:
+            bank[key] = re.sub(r'summary=&#91;图片&#93;', f'summary={nb_config.word_image_name}', bank[key])
+        except Exception as e:
+            logger.debug(f"修改词库图片外显失败：{e}")
+    with open("data/word_bank/bank.json", "w", encoding="utf-8") as f:
+        json.dump(bank, f, indent=4, ensure_ascii=False)
+    logger.info("词库图片外显修改成功")
+
+    
+        
+    
+    
 
         
         
@@ -77,4 +107,5 @@ else:
 
 
 if __name__ == "__main__":
+    nonebot.load_from_toml("pyproject.toml")
     nonebot.run()
