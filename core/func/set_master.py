@@ -8,19 +8,19 @@ from nonebot.adapters import Event
 import os,shutil,json,random,hashlib
 
 def add_master(id: str):
-    if os.path.exists("core/config/"):
-        if os.path.exists("core/config/cfg.json"):
+    if os.path.exists("data/config/"):
+        if os.path.exists("data/config/cfg.json"):
             logger.debug("发现配置文件")
         
     else:
         if os.path.exists("core/res/cfg.json"):
-            shutil.copy("core/res/cfg.json", "core/config/cfg.json")
+            shutil.copy("core/res/cfg.json", "data/config/cfg.json")
             logger.error("配置文件不存在，已创建默认配置文件")
         else:
             logger.error("配置文件不存在，请重新拉取bot")
             raise FileNotFoundError("配置文件不存在，请重新拉取bot")
 
-    with open("core/config/cfg.json", "r", encoding="utf-8") as f:
+    with open("data/config/cfg.json", "r", encoding="utf-8") as f:
         config = json.load(f)
 
     if "superusers" in config:
@@ -28,7 +28,7 @@ def add_master(id: str):
     else:
         config["superusers"] = [id]
 
-    with open("core/config/cfg.json", "w", encoding="utf-8") as f:
+    with open("data/config/cfg.json", "w", encoding="utf-8") as f:
         json.dump(config, f, indent=4, ensure_ascii=False)
 
     logger.info(f"已添加主人{id}")
