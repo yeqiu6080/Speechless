@@ -48,22 +48,23 @@ driver.register_adapter(ONEBOT_V11Adapter)
 nonebot.load_from_toml("pyproject.toml")
 
 # 加载配置
-if os.path.exists("config/"):
-    if os.path.exists("config/cfg.json"):
+if os.path.exists("data/config/"):
+    if os.path.exists("data/config/cfg.json"):
         logger.info("配置文件存在，正在加载...")
-        load_config("config/cfg.json")
+        load_config("data/config/cfg.json")
         
     else:
-        if os.path.exists("res/cfg.json"):
-            shutil.copy("res/cfg.json", "config/cfg.json")
+        if os.path.exists("core/res/cfg.json"):
+            shutil.copy("core/res/cfg.json", "data/config/cfg.json")
             logger.error("配置文件不存在，已创建默认配置文件")
         else:
             logger.error("配置文件不存在，请重新拉取bot")
 
 else:
-    os.mkdir("config")
-    if os.path.exists("res/cfg.json"):
-        shutil.copy("res/cfg.json", "config/cfg.json")
+    os.mkdir("data/config/")
+
+    if os.path.exists("core/res/cfg.json"):
+        shutil.copy("core/res/cfg.json", "data/config/cfg.json")
         logger.error("配置文件不存在，已创建默认配置文件")
     else:
         logger.error("配置文件不存在，请重新拉取bot")

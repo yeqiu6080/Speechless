@@ -1,10 +1,6 @@
 # Environments
 .venv/
-# Configs
-config/
 # Data
 data/
 #cache
-plugins/chehui/__pycache__/
-plugins/chehui/adapters/__pycache__
-plugins/__pycache__/
+**/__pycache__/

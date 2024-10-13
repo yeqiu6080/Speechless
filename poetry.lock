@@ -1400,27 +1400,6 @@ url = "http://mirrors.aliyun.com/pypi/simple"
 reference = "ali"
 
 [[package]]
-name = "nonebot-plugin-word-bank2"
-version = "0.1.8"
-description = "无数据问答插件"
-optional = false
-python-versions = ">=3.8,<4.0"
-files = [
-    {file = "nonebot_plugin_word_bank2-0.1.8-py3-none-any.whl", hash = "sha256:d16c1a61315ce68a97ff355acbd245347c482ce32284d5a9a6c82e47b0c30ff2"},
-    {file = "nonebot_plugin_word_bank2-0.1.8.tar.gz", hash = "sha256:95d6c8c7312f557c79cb06482ca451f126b45cd7b66d7497ece047d6e42cf2b0"},
-]
-
-[package.dependencies]
-httpx = ">=0.18.0,<1.0.0"
-nonebot-adapter-onebot = ">=2.0.0-beta.1"
-nonebot2 = ">=2.0.0"
-
-[package.source]
-type = "legacy"
-url = "http://mirrors.aliyun.com/pypi/simple"
-reference = "ali"
-
-[[package]]
 name = "nonebot-plugin-workscore"
 version = "0.1.2"
 description = "nonebot2 plugin work-score"
@@ -2703,4 +2682,4 @@ reference = "ali"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "d448c12a770aedd0490d13ec89bb47b4f6bca7009b42f34b0f016a57024a8b42"
+content-hash = "2db9f5b7c6fe9fa3eb93acb0862871f1d2c6d788b3bd70c1a7a15a9ca80973bb"
