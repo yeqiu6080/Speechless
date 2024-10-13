@@ -28,7 +28,7 @@ priority = "primary"
 [tool.nonebot]
 adapters = [{name = "OneBot V11", module_name = "nonebot.adapters.onebot.v11"}]
 plugins = ["nonebot_plugin_crazy_thursday", "nonebot_plugin_status", "nonebot_plugin_emojimix", "nonebot_plugin_workscore", "nonebot_plugin_color"]
-plugin_dirs = ["core\func","data\plugins"]
+plugin_dirs = ["core/func","data/plugins"]
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
