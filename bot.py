@@ -99,7 +99,7 @@ if os.path.exists("data/word_bank/bank.json"):
                             
                             logger.debug(f"修改词库图片外显前：{value}")
 
-                            i = re.sub(r'summary=&#91;图片&#93;', f'summary={nb_config.word_image_name}', value)
+                            i = re.sub(r',summary=(.*?),', f',summary={nb_config.word_image_name},', value)
                             listt.append(i)
                             logger.debug(f"修改词库图片外显后：{i}")
                         bank[lev][fw][key] = listt
