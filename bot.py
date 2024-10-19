@@ -86,19 +86,29 @@ else:
 if os.path.exists("data/word_bank/bank.json"):
     with open("data/word_bank/bank.json", "r", encoding="utf-8") as f:
         bank = json.load(f)
-    nb_config = nonebot.get_driver().config
-    for keya in bank:
-        for keyb in keya:
-            for keyc in keyb:
-                try:
-                    listt = []
-                    for i in bank[keyc]:
-                        i = re.sub(r'summary=&#91;图片&#93;', f'summary={nb_config.word_image_name}', i)
-                        listt.append(i)
-                    bank[keya][keyb][keyc] = listt
+        logger.info(f"词库{bank}")
 
-                except Exception as e:
+    nb_config = nonebot.get_driver().config
+    for lev in bank:
+        for fw in bank[lev]:
+            try:
+                for key in bank[lev][fw]:
+                    try:
+                        listt = []
+                        for value in bank[lev][fw][key]:
+                            
+                            logger.debug(f"修改词库图片外显前：{value}")
+
+                            i = re.sub(r'summary=&#91;图片&#93;', f'summary={nb_config.word_image_name}', value)
+                            listt.append(i)
+                            logger.debug(f"修改词库图片外显后：{i}")
+                        bank[lev][fw][key] = listt
+
+                    except Exception as e:
+                        logger.debug(f"修改词库图片外显失败：{e}")
+            except Exception as e:
                     logger.debug(f"修改词库图片外显失败：{e}")
+
     with open("data/word_bank/bank.json", "w", encoding="utf-8") as f:
         json.dump(bank, f, indent=4, ensure_ascii=False)
     logger.info("词库图片外显修改成功")
