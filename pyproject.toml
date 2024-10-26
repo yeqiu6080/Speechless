@@ -10,7 +10,6 @@ package-mode = false
 python = "^3.10"
 nonebot2 = {extras = ["fastapi"], version = "^2.3.3"}
 nonebot-adapter-onebot = "^2.4.5"
-nonebot-plugin-crazy-thursday = "^0.2.8"
 nonebot-plugin-alconna = "^0.52.3"
 nonebot-plugin-session = "^0.3.2"
 nonebot-plugin-status = "^0.9.0"
@@ -18,6 +17,7 @@ nonebot-plugin-emojimix = "^0.4.0"
 nonebot-plugin-workscore = "^0.1.2"
 nonebot-plugin-color = "^0.4.2"
 nonebot-plugin-deer-pipe = "^0.3.4"
+nonebot-plugin-picstatus = "^2.1.2"
 
 
 [[tool.poetry.source]]
@@ -28,7 +28,7 @@ priority = "primary"
 
 [tool.nonebot]
 adapters = [{name = "OneBot V11", module_name = "nonebot.adapters.onebot.v11"}]
-plugins = ["nonebot_plugin_crazy_thursday", "nonebot_plugin_status", "nonebot_plugin_emojimix", "nonebot_plugin_workscore", "nonebot_plugin_color", "nonebot_plugin_deer_pipe"]
+plugins = ["nonebot_plugin_emojimix", "nonebot_plugin_workscore", "nonebot_plugin_color", "nonebot_plugin_deer_pipe", "nonebot_plugin_picstatus"]
 plugin_dirs = ["core/func","data/plugins"]
 [build-system]
 requires = ["poetry-core"]
