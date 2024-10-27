@@ -73,7 +73,7 @@ if os.path.exists("data/config/"):
             logger.error("配置文件不存在，请重新拉取bot")
 
 else:
-    os.mkdir("data/config/")
+    os.makedirs("data/config/")
 
     if os.path.exists("core/res/cfg.json"):
         shutil.copy("core/res/cfg.json", "data/config/cfg.json")
