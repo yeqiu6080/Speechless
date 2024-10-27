@@ -28,7 +28,7 @@ def calculate_expression(expression):
 import nonebot as nb
 import nonebot.params as params
 import nonebot.adapters.onebot.v11 as ad
-e = nb.on_regex(r'.+(\)|=|\d)$',priority=11,block=False)
+e = nb.on_regex(r'^(?:#|/|无语)?(计算|算).+(\)|=|\d)$',priority=11,block=False)
 @e.handle()
 async def _(Event: ad.Event,Bot: ad.Bot,Msg: str = params.RegexStr()) :
 
