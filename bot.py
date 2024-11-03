@@ -61,13 +61,13 @@ driver.register_adapter(ONEBOT_V11Adapter)
 
 # 加载配置
 if os.path.exists("data/config/"):
-    if os.path.exists("data/config/cfg.json"):
+    if os.path.exists("data/config/config.yaml"):
         logger.info("配置文件存在，正在加载...")
-        load_config("data/config/cfg.json")
+        load_config("data/config/config.yaml")
         
     else:
-        if os.path.exists("core/res/cfg.json"):
-            shutil.copy("core/res/cfg.json", "data/config/cfg.json")
+        if os.path.exists("core/res/config.yaml"):
+            shutil.copy("core/res/config.yaml", "data/config/config.yaml")
             logger.error("配置文件不存在，已创建默认配置文件")
         else:
             logger.error("配置文件不存在，请重新拉取bot")
@@ -75,8 +75,8 @@ if os.path.exists("data/config/"):
 else:
     os.makedirs("data/config/")
 
-    if os.path.exists("core/res/cfg.json"):
-        shutil.copy("core/res/cfg.json", "data/config/cfg.json")
+    if os.path.exists("core/res/config.yaml"):
+        shutil.copy("core/res/config.yaml", "data/config/config.yaml")
         logger.error("配置文件不存在，已创建默认配置文件")
     else:
         logger.error("配置文件不存在，请重新拉取bot")
@@ -86,7 +86,7 @@ else:
 if os.path.exists("data/word_bank/bank.json"):
     with open("data/word_bank/bank.json", "r", encoding="utf-8") as f:
         bank = json.load(f)
-        logger.info(f"词库{bank}")
+        logger.trace(f"词库{bank}")
 
     nb_config = nonebot.get_driver().config
     for lev in bank:
